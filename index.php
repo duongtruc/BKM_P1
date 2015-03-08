@@ -9,6 +9,7 @@
  * @link https://github.com/panique/php-mvc/
  * @license http://opensource.org/licenses/MIT MIT License
  */
+ /*Hello, may tinh nay da duoc update*/
 
 // load the (optional) Composer auto-loader
 if (file_exists('vendor/autoload.php')) {
@@ -22,5 +23,4 @@ require 'application/config/config.php';
 require 'application/libs/application.php';
 require 'application/libs/controller.php';
 
-// start the application
-$app = new Application();
+
