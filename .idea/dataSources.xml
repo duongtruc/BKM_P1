@@ -2,18 +2,18 @@
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" hash="22892044">
     <data-source source="LOCAL" name="MySQL - smileplus@localhost" uuid="6e3cceec-9b10-4708-ad8e-a66b4fe1f144">
-      <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/smileplus</jdbc-url>
       <driver-properties>
-        <property name="zeroDateTimeBehavior" value="convertToNull" />
-        <property name="tinyInt1isBit" value="false" />
-        <property name="characterEncoding" value="utf8" />
-        <property name="characterSetResults" value="utf8" />
         <property name="yearIsDateType" value="false" />
+        <property name="characterEncoding" value="utf8" />
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="characterSetResults" value="utf8" />
+        <property name="tinyInt1isBit" value="false" />
       </driver-properties>
       <libraries />
     </data-source>
   </component>
 </project>
+
