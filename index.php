@@ -19,6 +19,5 @@ if (file_exists('vendor/autoload.php')) {
 
 // load application class
 require 'application/libs/application.php';
-require 'application/libs/controller.php';
 
 
