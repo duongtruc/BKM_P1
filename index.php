@@ -19,5 +19,8 @@ if (file_exists('vendor/autoload.php')) {
 
 // load application class
 require 'application/libs/application.php';
+if (file_exists('vendor/autoload.php')) {
+    require 'vendor/autoload.php';
+}
 
 
