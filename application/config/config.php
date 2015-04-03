@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /**
  * Configuration
@@ -12,33 +12,25 @@
  * Useful to show every little problem during development, but only show hard errors in production
  */
 error_reporting(E_ALL);
-//ini_set("display_errors", 0);
+ini_set("display_errors", 1);
 
 /**
  * Configuration for: Project URL
  * Put your URL here, for local development "127.0.0.1" or "localhost" (plus sub-folder) is fine
  */
+define('URL', 'http://localhost/smile/');
+
 /**
  * Configuration for: Database
  * This is the place where you define your database credentials, database type etc.
  */
-
 define('DB_TYPE', 'mysql');
-
-define('DB_HOST', 'localhost');
-
-/*define('DB_NAME', 'map_db');
-
-define('DB_USER', 'root');
-
+define('DB_HOST', '127.0.0.1');
+define('DB_NAME', '');
+define('DB_USER', '');
 define('DB_PASS', '');
-define('URL', 'http://localhost/');*/
-define('DB_NAME', 'smileplus');
-
-define('DB_USER', 'root');
-
-define('DB_PASS', '');
-define('URL', 'http://smileplus.net/');
+/**
+/**
  * Configuration for: Views
  *
  * PATH_VIEWS is the path where your view files are. Don't forget the trailing slash!

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Page's title</title>
+    <link href="{{ constant('URL') }}public/css/metro-bootstrap.css" rel="stylesheet">
+    <link href="{{ constant('URL') }}public/css/metro-bootstrap-responsive.css" rel="stylesheet">
+    <link href="{{ constant('URL') }}public/css/iconFont.css" rel="stylesheet">
+</head>
+<body class="metro">
+{% block javascripts %}
+    <script src="{{ constant('URL') }}public/js/jquery/jquery-2.1.0.min.js"></script>
+    <script src="{{ constant('URL') }}public/js/jquery/jquery.min.js"></script>
+    <script src="{{ constant('URL') }}public/js/jquery/jquery.widget.min.js"></script>
+    <script src="{{ constant('URL') }}public/js/metro.min.js"></script>
+{% endblock %}
+    {% block content %} {% endblock %}
+</body>
+</html>
