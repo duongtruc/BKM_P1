@@ -18,4 +18,8 @@ class Home extends Controller
     {
         $this->render('home/index', array('title' => "Welcome"));
 	}
+    public function api()
+    {
+        echo "Data from api";
+    }
 }
