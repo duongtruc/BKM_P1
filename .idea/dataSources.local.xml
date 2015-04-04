@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="MySQL - smileplus@localhost" uuid="6e3cceec-9b10-4708-ad8e-a66b4fe1f144">
+      <secret-storage>memory</secret-storage>
+    </data-source>
+  </component>
+</project>

@@ -1,4 +1,6 @@
 <Files *.php>
+
+echo"haha"
     Order Deny,Allow
     Deny from all
 </Files>
