@@ -16,7 +16,9 @@ class Home extends Controller
      */
     public function index()
     {
-        $this->render('home/index', array('title' => "Welcome"));
+        $b = H;
+        $a = 1 + 1;
+        $this->render('home/index', array('title' => $a, 'title2' => array(1, 2, 3)));
 	}
     public function api()
     {

@@ -1,13 +1,50 @@
-{% extends "_templates/base.twig" %}
-{% block javascripts %}
-
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Page's title</title>
+    <link href="{{ constant('URL') }}/public/css/iconFont.css" rel="stylesheet">
+    <link href="{{ constant('URL') }}/public/css/style.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+</head>
 {% block content %}
     <div class="main-content clearfix">
         <div class="container">
             <div class="span6">
                 <h4>{{ title }}</h4>
+                <input id="screen" type="text">
+                <button class="btn-number btn primary"><strong>1</strong></button>
+                <button class="btn-number"><strong>2</strong></button>
+                <button class="btn-number" id="num_2"><strong>3</strong></button>
+                <button class="btn-number" id="num_2"><strong>4</strong></button>
+                <button class="btn-number" id="num_2"><strong>5</strong></button>
+                <button class="btn-number" id="num_2"><strong>6</strong></button>
+                <button class="btn-number" id="num_2"><strong>7</strong></button>
+                <button class="btn-number" id="num_2"><strong>8</strong></button>
+                <button class="btn-number" id="btn-mul"><strong>*</strong></button>
+                <button class="btn-result"><strong>=</strong></button>
+                <h4>{{ constant('H') }}</h4>
+                {% for t in title2 %}
+                    <h4>{{ t }}</h4>
+                {% endfor %}
             </div>
         </div>
     </div>
+    <script type="application/javascript">
+        function cal(text) {
+            alert(text);
+        }
+        $(document).ready(function() {
+            $(".btn-number").on('click', function() {
+                $("#screen").val($("#screen").val() + $(this).text());
+            });
+            $(".btn-result").on('click', function() {
+                cal($("#screen").val());
+            });
+        });
+    </script>
 {% endblock %}
