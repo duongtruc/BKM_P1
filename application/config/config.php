@@ -38,6 +38,3 @@ define('DB_PASS', '');
  */
 define('PATH_VIEWS', 'application/views/');
 define('PATH_VIEW_FILE_TYPE', '.twig');
-a=c
-//nguyen duc hieu
-//haha
