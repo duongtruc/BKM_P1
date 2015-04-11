@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3677b40c-bda9-4098-9c39-7d77916497c2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/_templates/base.twig" afterPath="$PROJECT_DIR$/application/views/_templates/base.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/home/index.twig" afterPath="$PROJECT_DIR$/application/views/home/index.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/style.css" afterPath="$PROJECT_DIR$/public/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mvc.iws" />
@@ -45,8 +43,8 @@
           <file leaf-file-name="index.twig" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/application/views/home/index.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.12014788" vertical-offset="700" max-vertical-offset="1496">
-                  <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+                <state vertical-scroll-proportion="0.47134936" vertical-offset="0" max-vertical-offset="1496">
+                  <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
                   <folding />
                 </state>
               </provider>
@@ -527,7 +525,13 @@
       <option name="project" value="LOCAL" />
       <updated>1428761512067</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Updated phase #1">
+      <created>1428765773893</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1428765773893</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -840,8 +844,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/home/index.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12014788" vertical-offset="700" max-vertical-offset="1496">
-          <caret line="45" column="33" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.47134936" vertical-offset="0" max-vertical-offset="1496">
+          <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
           <folding />
         </state>
       </provider>
