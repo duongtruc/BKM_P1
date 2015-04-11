@@ -1,10 +1,14 @@
-
+<head>
+    <meta charset="utf-8">
+    <title>BKMedia Calculator</title>
+</head>
+{% block javascripts %}
+    <script src="{{ constant('URL') }}/public/js/jquery/jquery.min.js"></script>
+    <script src="{{ constant('URL') }}/public/js/jquery/jquery.widget.min.js"></script>
+{% endblock %}
+<link href="{{ constant('URL') }}/public/css/iconFont.css" rel="stylesheet">
+<link href="{{ constant('URL') }}/public/css/style.css" rel="stylesheet">
 <body class="metro">
     {% block content %} {% endblock %}
-    {% block javascripts %}
-        <script src="{{ constant('URL') }}public/js/jquery/jquery.min.js"></script>
-        <script src="{{ constant('URL') }}public/js/jquery/jquery.widget.min.js"></script>
-        <script src="{{ constant('URL') }}public/js/metro.min.js"></script>
-    {% endblock %}
 </body>
 </html>

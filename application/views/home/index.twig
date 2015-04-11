@@ -1,52 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Page's title</title>
-    <link href="{{ constant('URL') }}/public/css/iconFont.css" rel="stylesheet">
-    <link href="{{ constant('URL') }}/public/css/style.css" rel="stylesheet">
-    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-</head>
+{% extends "_templates/base.twig" %}
+{% block javascript %}
+{% endblock %}
 {% block content %}
     <div class="main-content clearfix">
         <div class="container">
             <div class="span6">
-                <h4>{{ title }}</h4>
                 <input id="screen" type="text"><br><br>
-                <button class="btn-number"><strong>0</strong></button>
-                <button class="btn-number"><strong>1</strong></button>
+                <button class="btn-small"><strong>(</strong></button>
+                <button class="btn-small"><strong>)</strong></button>
+                <button class="btn-small"><strong>^</strong></button>
+                <button class="btn-small"><strong>sin</strong></button>
+                <button class="btn-small"><strong>cos</strong></button>
+                <button class="btn-small"><strong>tan</strong></button>
+                <button class="btn-small"><strong>log</strong></button><br>
+                <button class="btn-number"><strong>6</strong></button>
+                <button class="btn-number"><strong>7</strong></button>
+                <button class="btn-number"><strong>8</strong></button>
+                <button class="btn-number"><strong>9</strong></button>
+                <button class="btn-del btn-func"><strong>DEL</strong></button>
+                <button class="btn-clr btn-func"><strong>AC</strong></button><br>
                 <button class="btn-number"><strong>2</strong></button>
                 <button class="btn-number"><strong>3</strong></button>
                 <button class="btn-number"><strong>4</strong></button>
                 <button class="btn-number"><strong>5</strong></button>
-                <button class="btn-number"><strong>6</strong></button>
-                <button class="btn-number"><strong>7</strong></button>
-                <button class="btn-number"><strong>8</strong></button>
-                <button class="btn-number"><strong>9</strong></button><br>
-                <button class="btn-number"><strong>+</strong></button>
-                <button class="btn-number"><strong>-</strong></button>
-                <button class="btn-number"><strong>x</strong></button>
-                <button class="btn-number"><strong>/</strong></button>
-                <button class="btn-result btn-number"><strong>=</strong></button>
+                <button class="btn-number btn-func"><strong>+</strong></button>
+                <button class="btn-number btn-func"><strong>-</strong></button><br>
+                <button class="btn-number"><strong>0</strong></button>
+                <button class="btn-number"><strong>1</strong></button>
+                <button class="btn-number"><strong>.</strong></button>
+                <button class="btn-number"><strong>e</strong></button>
+                <button class="btn-number btn-func"><strong>x</strong></button>
+                <button class="btn-number btn-func"><strong>/</strong></button><br>
+                <button class="btn-number" id="btn-ans"><strong>Ans</strong></button>
+                <button class="btn-result"><strong>=</strong></button>
             </div>
         </div>
     </div>
     <script type="application/javascript">
+        var ans = 0;//The current result;
+        /*
+        Main function
+        @author:
+        @param :
+            expression: string
+        @return : real || "error"
+         */
         function calculate(expression) {
-            //TODO - analysis the expression for result
+            //TODO - analysis the expression for result; return "error" if has error
             return 0;
         }
         $(document).ready(function() {
-            $(".btn-number").on('click', function() {
-                $("#screen").val($("#screen").val() + $(this).text());
+            //For number and operator button
+            $(".btn-number, .btn-small").on('click', function() {
+                if ($(this).prop("id") != "btn-ans") {
+                    $("#screen").val($("#screen").val() + $(this).text());
+                }
             });
+            //For del button
+            $(".btn-del").on("click", function() {
+                var s = $("#screen").val();
+                $("#screen").val(s.substring(0, s.length - 1));
+            });
+            //For ans button
+            $("#btn-ans").on('click', function() {
+                $("#screen").val($("#screen").val() + ans.toString());
+            });
+            //For AC button
+            $(".btn-clr").on("click", function() {
+                $("#screen").val("");
+            });
+            //For getting result
             $(".btn-result").on('click', function() {
                 var expression = $("#screen").val();
                 var result = calculate(expression);
+                if (result != 'error')
+                    ans = result;
                 $("#screen").val(result);
             });
         });

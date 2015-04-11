@@ -1,8 +1,45 @@
 .btn-number {
  background-color: #004e9d;
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
     border-radius: 5px;
     color: #ffffff;
-    font-size: 20px;
+    font-size: 30px;
+    margin: 5px;
+}
+.btn-small {
+    margin: 5px;
+    height: 40px;
+    width: 70px;
+    background-color: #00356a;
+    color: #ffffff;
+}
+.btn-func {
+    color : #ffffff;
+    font-size: 30px;
+    height: 70px;
+    margin-left: 10px;
+    width: 110px;
+}
+.btn-del, .btn-clr, .btn-result { background-color: darkred}
+
+.span6 {
+    margin-left: auto;
+    margin-right: auto;
+}
+#screen {
+    width: 580px;
+    height: 100px;
+    font-family: "Roboto", sans-serif;
+    font-size: 90px;
+}
+.btn-result {
+    width: 370px;
+    height: 70px;
+    color: #ffffff;
+    font-size: 50px;
+    margin: 5px;
+}
+#btn-ans {
+    width: 200px;
 }
