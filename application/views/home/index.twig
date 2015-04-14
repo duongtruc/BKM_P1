@@ -45,10 +45,139 @@
             expression: string
         @return : real || "error"
          */
+
+        var base=0, plus=0, multi= 1, pow= 2, baseInc= 3;
+        /* For now, baseInc(base increment) = 3 because there're 3 priority level.
+        Plus and  subtraction(plus with negative)  are level 0 (lowest)
+        Multiplication and division (multi with inverse) are level 1
+        Power is level 2.
+        CONSIDER THE PRIORITY AND THE OF THE REST
+         */
+
+        function power(base,exponent){
+            var res=1;
+            for(i=0;i<exponent;i++) res*=base;
+            return res;
+        }
+
+        function isOperator(operator){
+            if (operator=='+'||operator=='-'||operator=='x'||operator=='/'||operator=='^') return true;
+            else return false;
+        }
+
+        function getResult(operands, operators){
+            while (operators.length!=0){
+                var pos= 0, max=Math.max.apply(null,operators);
+                for (i=0;operators[i]!=max;i++) pos++;
+                switch (operators[pos]%baseInc){
+                    case plus:
+                        operands[pos+1]+=operands[pos];
+                        break;
+                    case multi:
+                        operands[pos+1]*=operands[pos];
+                        break;
+                    case pow:
+                        operands[pos+1]=power(operands[pos],operands[pos+1]);
+                        break;
+                }
+                operands.splice(pos,1);
+                operators.splice(pos,1);
+            }
+            return operands[0];
+        }
+        
         function calculate(expression) {
             //TODO - analysis the expression for result; return "error" if has error
-            return 0;
+            var notInverse=true, number= 1, negativeFst;
+            var operand=[], operator=[];
+			
+            // Check if expression end or start with a operator but not minus.
+            if (isOperator(expression[expression.length-1])||isOperator(expression[0])&&expression[0]!='-')
+                return "ERROR.";
+
+            if (expression[0]!='-') negativeFst=false; else negativeFst=true;
+
+            //Separate operands, operators and push in array.
+            for (i=0;i<expression.length;i++){
+
+                //Check if 1 operator next to other one? HAVEN'T SOLVED OPERATING WITH NEGATIVE.
+                if (i+1<expression.length&&isOperator(expression[i])&&isOperator(expression[i+1]))
+                    return"ERROR.";
+
+                //Check if right parenthesis more than left parenthesis
+                if (base<0)
+                    return"ERROR.";
+
+                switch (expression[i]){
+                    case '(': base+=baseInc; break;
+                    case ')': base-=baseInc;break;
+                    case '+': {
+                        notInverse=true;
+                        operand[operand.length]=number;
+                        number=1;
+                        operator[operator.length]=base+plus; break;
+                    }
+                    case 'x': {
+                        notInverse=true;
+                        operand[operand.length]=number;
+                        number=1;
+                        operator[operator.length]=base+multi; break;
+                    }
+                    case '^': {
+                        notInverse=true;
+                        operand[operand.length]=number;
+                        number=1;
+                        operator[operator.length]=base+pow; break;
+                    }
+                    case '-': {
+                        notInverse=true;
+                        if (operand.length!=0||!negativeFst){
+                            operand[operand.length]=number;
+                            operator[operator.length]=base+plus;
+                        }
+                        number=-1; break;
+                    }
+                    case '/': {
+                        notInverse=false;
+                        operand[operand.length]=number;
+                        number=1;
+                        operator[operator.length]=base+multi; break;
+                    }
+                    case '0':
+                    case '1':
+                    case '2':
+                    case '3':
+                    case '4':
+                    case '5':
+                    case '6':
+                    case '7':
+                    case '8':
+                    case '9':
+                    {
+                        if(notInverse){
+                            if(i==0||expression[i-1]=='+'||expression[i-1]=='-'||expression[i-1]=='x'||expression[i-1]=='^'||expression[i-1]=='(')
+                                number*=(expression[i]-'0');
+                            else if(expression[i-1]-'0'<10&&expression[i-1]-'0'>-1) {
+                                number=number*10+(expression[i]-'0');
+                            }
+                        }
+                        else{
+                            if (expression[i-1]=='/') number/=(expression[i]-'0');
+                            else number=1/(1/number*10+(expression[i]-'0'));
+                        }
+                        break;
+                    }
+                }
+            }
+
+            operand[operand.length]=number;
+            if (operator.length==0) {
+                if (operand.length==0) return "";
+                else return operand[0];
+            }
+            else return getResult(operand,operator);
         }
+
         $(document).ready(function() {
             //For number and operator button
             $(".btn-number, .btn-small").on('click', function() {
