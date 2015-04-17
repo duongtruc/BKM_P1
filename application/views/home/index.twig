@@ -47,7 +47,186 @@
          */
         function calculate(expression) {
             //TODO - analysis the expression for result; return "error" if has error
-            return 0;
+           // if (expression[2] == 3) alert("bang");
+            //else alert("ko bang");
+            var thu = add2Stack(expression);
+           // while(thu.length>0) document.write((k = thu.shift()) + " " + " k= " + k + " xx ");
+            kq=result_calculater(thu);
+            return kq;
+        }
+        function add2Stack(expression)
+        {
+            var oprd = new Array();
+            var oprt = new Array();
+             num = 0;
+
+            for (i = 0; i < expression.length; i++)
+            {
+                if (expression[i]>= '0' && expression[i] <= '9' || expression[i] == '.')
+                {
+                   // if (dot==false)
+                     num = num + expression[i];//alert(num)
+
+                }
+                else //neu la toan tu
+                {
+                    switch (expression[i]) {
+                        case '+':case '-':case 'x':case '/':case '^':case 'e':
+                        oprd.push(num);
+                        num=0;
+                            if (oprt.length > 0)
+                            {
+                                var op = oprt.pop();
+                                if (priority(op) > priority(expression[i].toString()))
+                                {
+                                    oprd.push(op);
+                                }
+                                else oprt.push(op);
+
+                            }
+                            oprt.push(expression[i]);
+                            break;
+                        case '(':
+                            oprt.push("(");
+                            break;
+                        case ')':
+                            oprd.push(num);
+                            num=0;
+                            while (oprt.length > 0)
+                            {
+                                var op = oprt.pop();
+                                if (op == "(") break;
+                                oprd.push(op);
+                            }
+                        case 'c':
+                            if (expression[i+1] == 'o' && expression[i+2] == 's')
+                            {
+                                var chuoi = expression[i];
+                                chuoi += expression[i+1];
+                                chuoi += expression[i+2];
+                                oprt.push(chuoi);   //alert(oprt.pop() + " day la sin");
+                                i += 2;//alert("i = " + i);
+                            }
+                            break;
+                        case 's':
+                            if (expression[i+1] == 'i' && expression[i+2] == 'n')
+                            {
+                                var chuoi = expression[i];
+                                chuoi += expression[i+1];
+                                chuoi += expression[i+2];
+                                oprt.push(chuoi);   //alert(oprt.pop() + " day la sin");
+                                i += 2;//alert("i = " + i);
+                            }
+                            break;
+                        case 'l':
+                            if (expression[i+1] == 'o' && expression[i+2] == 'g')
+                            {
+                                var chuoi = expression[i];
+                                chuoi += expression[i+1];
+                                chuoi += expression[i+2];
+                                oprt.push(chuoi);   //alert(oprt.pop() + " day la sin");
+                                i += 2;//alert("i = " + i);
+                            }
+                            break;
+                        case 't':
+                            if (expression[i+1] == 'a' && expression[i+2] == 'n')
+                            {
+                                var chuoi = expression[i];
+                                chuoi += expression[i+1];
+                                chuoi += expression[i+2];
+                                oprt.push(chuoi);   //alert(oprt.pop() + " day la sin");
+                                i += 2;//alert("i = " + i);
+                            }
+                            break;
+                    }
+                }
+                if (i == (expression.length - 1)) oprd.push(num);
+            }
+            while (oprt.length > 0) oprd.push(oprt.pop());
+            return oprd;
+        }
+        function priority(op) //op1 > op2??
+        {
+            switch (op){
+                case "+": return 10;
+                case "(" : return 10;
+                case "-": return 11;
+                case "x": return 12;
+                case "/": return 13;
+                case "^": case "e": return 15;
+                case "sin":case "cos":case "tan":case "log": return 19;
+            }
+        }
+
+        function result_calculater(expression)
+        {
+            var cal = new Array();
+            while (expression.length > 0)
+            {
+                var temp=expression.shift();
+                switch (temp){ //toan tu
+                    case "+":
+                        a=parseFloat(cal.pop());
+                        b=parseFloat(cal.pop());
+                        rt=parseFloat(a+b);
+                        cal.push(rt);
+                        break;
+                    case "-":
+                        b=parseFloat(cal.pop());
+                        a=parseFloat(cal.pop());
+                        rt=parseFloat(a-b);
+                        cal.push(rt);
+                        break;
+                    case "x":
+                        b=parseFloat(cal.pop());
+                        a=parseFloat(cal.pop());
+                        rt=parseFloat(a*b);
+                        cal.push(rt);
+                        break;
+                    case "/":
+                        b=parseFloat(cal.pop());//thang vao truoc / thang vao sau
+                        a=parseFloat(cal.pop());
+                        rt=parseFloat(a/b);
+                        cal.push(rt);
+                        break;
+                    case "^":
+                        b=parseFloat(cal.pop());
+                        a=parseFloat(cal.pop());
+                        rt=parseFloat(Math.pow(a,b));
+                        cal.push(rt);
+                        break;
+                    case "e":
+                        a=parseFloat(cal.pop());
+                        b=parseFloat(cal.pop());
+                        rt=parseFloat(a*Math.pow(10,b));
+                        cal.push(rt);
+                        break;
+                    case "sin":
+                        a=parseFloat(cal.pop());
+                        rt=parseFloat(Math.sin(a));
+                        cal.push(rt);
+                        break;
+                    case "cos":
+                        a=parseFloat(cal.pop());
+                        rt=parseFloat(Math.cos(a));
+                        cal.push(rt);
+                        break;
+                    case "tan":
+                        a=parseFloat(cal.pop());
+                        rt=parseFloat(Math.tan(a));
+                        cal.push(rt);
+                        break;
+                    case "log":
+                        a=parseFloat(cal.pop());
+                        rt=parseFloat(Math.log(a));
+                        cal.push(rt);
+                        break;
+                    default:
+                        cal.push(temp);
+                        break;
+                }
+            }
+            return cal;
         }
         $(document).ready(function() {
             //For number and operator button
