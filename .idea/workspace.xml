@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3677b40c-bda9-4098-9c39-7d77916497c2" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\13. Program File\wamp\www\BKM_P1\application\views\home\index111.twig" afterPath="" />
-      <change type="DELETED" beforePath="D:\13. Program File\wamp\www\BKM_P1\application\views\home\lab5.sql" afterPath="" />
-      <change type="DELETED" beforePath="D:\13. Program File\wamp\www\BKM_P1\application\views\home\thunghiem.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="mvc.iws" />
@@ -41,7 +38,7 @@
       <file leaf-file-name="index.twig" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/home/index.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="33" selection-start="4679" selection-end="4679" vertical-scroll-proportion="0.730659" vertical-offset="1445" max-vertical-offset="4539">
+            <state line="139" column="34" selection-start="6785" selection-end="6785" vertical-scroll-proportion="3.8481376" vertical-offset="1020" max-vertical-offset="4539">
               <folding />
             </state>
           </provider>
@@ -678,7 +675,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/home/index.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="33" selection-start="4679" selection-end="4679" vertical-scroll-proportion="0.730659" vertical-offset="1445" max-vertical-offset="4539">
+        <state line="139" column="34" selection-start="6785" selection-end="6785" vertical-scroll-proportion="3.8481376" vertical-offset="1020" max-vertical-offset="4539">
           <folding />
         </state>
       </provider>
