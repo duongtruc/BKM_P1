@@ -8,6 +8,11 @@
       <driver-properties>
         <property name="characterEncoding" value="utf8" />
         <property name="yearIsDateType" value="false" />
+<<<<<<< HEAD
+=======
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="characterSetResults" value="utf8" />
+>>>>>>> 6cc61077170b9c562197b612cd79b9fa25a24fc3
         <property name="tinyInt1isBit" value="false" />
         <property name="characterSetResults" value="utf8" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />
